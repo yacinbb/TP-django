@@ -1,0 +1,16 @@
+<!-- %  extends 'magasin/base.html' %}
+{% block content %}  
+    <div class="col-md-12 text-center">
+        <h2>Manip Commandes ...... </h2>
+    </div> 
+    <form method='POST' class="post-form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+      
+        <button type="sumit" class="btn btn-default">Enregistrer</button>
+    </form>    
+    <div class="col-lg-4">
+         <h6>Total Commande<strong>{{cd.totalCde}}</strong></h6>
+    </div>
+{% include 'magasin/listeCommande.html' %}    
+{% endblock %} -->
