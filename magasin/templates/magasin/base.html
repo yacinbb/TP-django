@@ -19,6 +19,14 @@ href="{% static 'css/base.css'%}">
     body{
         background-color: rgb(255, 255, 255);
     }
+    .myform button{
+        color: rgb(7, 7, 7);
+        width: 120px;
+        height: 40px;
+        border-radius: 10px;
+        font-weight: bold;
+        margin-right: 10px;
+    }
 </style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -47,10 +55,10 @@ href="{% static 'css/base.css'%}">
                       </li>
                 </ul>
                 
-                <form class="d-flex" role="search">
+                <!-- <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> -->
                 
             </div>
         </div>
@@ -59,9 +67,13 @@ href="{% static 'css/base.css'%}">
             <li class="nav-item active">
             <a class="nav-link" href="#">{{user}},</a>
             </li> 
-                <li class="nav-item active">
-                <a class="nav-link" href="{% url 'logout' %}">Déconnexion</a>
-                </li>
+                <li class="nav-item">
+        <form method="post" action="{% url 'logout' %}" class="myform">
+          {% csrf_token %}
+          <button class="btn btn-secondary" type="submit">Logout</button>
+          
+        </form>
+      </li>
             {% else %}
 <li class="nav-item active">
 <a class="nav-link" href="{% url 'login' %}">Connexion</a>

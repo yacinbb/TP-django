@@ -1,4 +1,11 @@
-{% extends "magasin/base.html" %}
+
+<style>
+    h2{
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+</style>
 {% block content %}
 <h2>Vous êtes déconnecté. </h2>
 <a href="{% url 'login' %}">Se reconnecter</a>

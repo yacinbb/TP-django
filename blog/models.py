@@ -20,14 +20,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 class MonObjetListView(ListView): 
-    model = Post # Spécifie le modèle associé à cette vue 
+    model = Post 
     template_name = 'blog/list.html'
-    # Chemin vers le template utilisé pour afficher le formulaire de modification 
-    context_object_name = 'posts' # Nom de l'objet de contexte dans le template 
-class Comment(models.Model):
-    author = models.CharField(max_length=60)
-    body = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
-    post = models.ForeignKey("Post", on_delete=models.CASCADE)
-    def __str__(self):
-        return f"{self.author} on '{self.post}'" 
+    context_object_name = 'posts' 
+
