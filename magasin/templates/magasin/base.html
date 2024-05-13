@@ -15,6 +15,11 @@ href="{% static 'css/base.css'%}">
 
  {% endblock %}
 </head>
+<style>
+    body{
+        background-color: rgb(255, 255, 255);
+    }
+</style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -27,7 +32,7 @@ href="{% static 'css/base.css'%}">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Catalogue</a>
+                        <a class="nav-link" href="/magasin/">Catalogue</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link cursor-pointer" href="{% url 'nouveauFour' %}">Fournisseur</a>                    </li>
@@ -35,13 +40,18 @@ href="{% static 'css/base.css'%}">
                         <a href="{% url 'nouveauCde' %}" class="nav-link cursor-pointer"> Commande</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link cursor-pointer"> Administration</a>
-                    </li>
+                        <a class="nav-link" href="/blog/"> BLog</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/jeux">Jeux</a>
+                      </li>
                 </ul>
+                
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                
             </div>
         </div>
         <ul class="navbar-nav ml-auto">
